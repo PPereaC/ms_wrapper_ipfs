@@ -71,7 +71,6 @@ app.get('/recuperarMetadata/:cid', async (req, res) => {
             return res.status(400).json({ error: "Debes proporcionar un CID" });
         }
 
-        // Recuperar usando el SDK o Gateway directo
         const data = await pinata.gateways.get(cid);
 
         res.status(200).json(data.data ? data.data : data);
